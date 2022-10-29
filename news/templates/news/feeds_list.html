@@ -1,0 +1,83 @@
+{% extends 'news/base.html' %}
+{% block content %}
+{% load static %}
+
+<div class="page-title">
+	<h1>Feeds</h1><br/>
+</div>
+
+<div class="marquee-container">
+	  
+	  <article class="marquee-wrapper">
+
+		<div class="marquee">
+			
+		  <div class="marquee__group">
+			<svg>
+				<use href="{% static 'news/img/coinstats.svg' %}#layer" />
+			</svg>
+			<svg>
+				<use href="{% static 'news/img/coindesk.svg' %}#layer" />
+			</svg>
+			<svg>
+				<use href="{% static 'news/img/cryptonews.svg' %}#katman_1" />
+			</svg>
+			<svg>
+				<use href="{% static 'news/img/cointelegraph.svg' %}#layer" />
+			</svg>
+
+		  </div>
+	  
+		  <div aria-hidden="true" class="marquee__group">
+			<svg>
+				<use href="{% static 'news/img/coinstats.svg' %}#layer" />
+			</svg>
+			<svg>
+				<use href="{% static 'news/img/coindesk.svg' %}#layer" />
+			</svg>
+			<svg>
+				<use href="{% static 'news/img/cryptonews.svg' %}#katman_1" />
+			</svg>
+			<svg>
+				<use href="{% static 'news/img/cointelegraph.svg' %}#layer" />
+			</svg>
+		
+		  </div>
+		</div>
+	  
+		<div class="marquee marquee--reverse">
+		  <div class="marquee__group">
+			<svg>
+				<use href="{% static 'news/img/coinstats.svg' %}#layer" />
+			</svg>
+			<svg>
+				<use href="{% static 'news/img/coindesk.svg' %}#layer" />
+			</svg>
+			<svg>
+				<use href="{% static 'news/img/cryptonews.svg' %}#katman_1" />
+			</svg>
+			<svg>
+				<use href="{% static 'news/img/cointelegraph.svg' %}#layer" />
+			</svg>
+
+		  </div>
+	  
+		  <div aria-hidden="true" class="marquee__group">
+			<svg>
+				<use href="{% static 'news/img/coinstats.svg' %}#layer" />
+			</svg>
+			<svg>
+				<use href="{% static 'news/img/coindesk.svg' %}#layer" />
+			</svg>
+			<svg>
+				<use href="{% static 'news/img/cryptonews.svg' %}#katman_1" />
+			</svg>
+			<svg>
+				<use href="{% static 'news/img/cointelegraph.svg' %}#layer" />
+			</svg>
+		  </div>
+		</div>
+	  </article>
+
+</div>
+{% endblock %}
