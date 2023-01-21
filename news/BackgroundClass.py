@@ -25,7 +25,6 @@ class BackgroundClass:
                         
             print(already_updated)
             if not already_updated:
-                print("in")
                 for entry in rss:
                     for artitle in entry.entries:
                         get_feed_id = Feed.objects.get(url = artitle.title_detail.base)
