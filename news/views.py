@@ -28,8 +28,8 @@ def articles_list(request): #todo update feeds and numbers in objects.filter sta
     rows5 = [articles5[x:x+1] for x in range(0, len(articles5), 1)]
 
     
-    return render(request, 'news/articles_list.html', {'rows1': rows1, 'rows2': rows2, 'rows3': rows3, 'rows4': rows4, 'rows5': rows5})
+    return render(request, 'articles_list.html', {'rows1': rows1, 'rows2': rows2, 'rows3': rows3, 'rows4': rows4, 'rows5': rows5})
 
 def feeds_list(request):
     feeds = Feed.objects.all()
-    return render(request, 'news/feeds_list.html', {'feeds': feeds})
+    return render(request, 'feeds_list.html', {'feeds': feeds})
