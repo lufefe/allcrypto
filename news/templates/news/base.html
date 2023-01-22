@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	{% load staticfiles %}
+	{% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/apple-touch-icon.png' %}">
 	<link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
@@ -20,7 +20,7 @@
 
 <header class="header responsive-wrapper">
 	<div class="header-left">
-		<a href="{% url 'articles_list' %}"><img src="{% staticfiles 'img/allcrypto24.svg' %}" alt="Site logo"></a>
+		<a href="{% url 'articles_list' %}"><img src="{% static '/img/allcrypto24.svg' %}" alt="Site logo"></a>
 	</div>
 	<!-- <div class="header-middle">
 		<a href="#" class="header-link">Call Us (718) 772 1872</a>
