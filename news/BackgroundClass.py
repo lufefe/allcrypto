@@ -23,7 +23,7 @@ class BackgroundClass:
                     if ent.title == art.title:
                         already_updated = True
                         
-            print(already_updated)
+            # print(already_updated)
             if not already_updated:
                 for entry in rss:
                     for artitle in entry.entries:
