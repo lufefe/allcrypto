@@ -33,3 +33,6 @@ def articles_list(request): #todo update feeds and numbers in objects.filter sta
 def feeds_list(request):
     feeds = Feed.objects.all()
     return render(request, 'feeds_list.html', {'feeds': feeds})
+
+def contactus(request):
+    return render(request, 'contact_us.html')
