@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'allcrypto.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-DEVELOPMENT_MODE = True
+# DEVELOPMENT_MODE = True
 if DEVELOPMENT_MODE is True:
     DATABASES = {
         "default": {
