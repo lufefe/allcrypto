@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'allcrypto.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-DEVELOPMENT_MODE = True
+# DEVELOPMENT_MODE = True
 if DEVELOPMENT_MODE is True:
     DATABASES = {
         "default": {
@@ -119,7 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'EST'
 
 USE_I18N = True
 
@@ -131,7 +131,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [ os.path.join(BASE_DIR,'static') ]
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 # print(os.path.join(BASE_DIR,'static'))
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
