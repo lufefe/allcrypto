@@ -239,10 +239,12 @@ input[type="checkbox"]{
 
 .app-contact {
   margin-top: auto;
-  font-size: 14px;
   color: #f8f3eb;
 }
-
+.contact-info{
+  text-decoration: underline;
+  color: #f8f3eb;
+}
 .app-form-group {
   margin-bottom: 15px;
 }
