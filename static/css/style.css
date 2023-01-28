@@ -507,13 +507,11 @@ input[type="checkbox"]{
   background-color: #F8E177;
 }
 
-.article-excerpt,
-.article-creditation {
+.article-excerpt {
   font-size: 1.125rem;
   line-height: 1.4;
 }
-.article-excerpt p + p,
-.article-creditation p + p {
+.article-excerpt p + p {
   margin-top: 0px !important;
   margin-bottom: 0px !important;
 }

@@ -14,9 +14,7 @@ def articles_list(request): #todo update feeds and numbers in objects.filter sta
     # Source 2 - https://cointelegraph.com/rss
     articles2 = Article.objects.filter(feed = 12).order_by('-publication_date')
     rows2 = [articles2[x:x+1] for x in range(0, len(articles2), 1)]
-    for ie in rows2:
-        for i in ie:
-            print(i.publication_date)
+
     # Source 3 - https://crypto.news/feed/
     articles3 = Article.objects.filter(feed = 13).order_by('-publication_date')
     rows3 = [articles3[x:x+1] for x in range(0, len(articles3), 1)]
