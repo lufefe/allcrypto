@@ -36,3 +36,6 @@ def feeds_list(request):
 
 def contactus(request):
     return render(request, 'contact_us.html')
+
+def privacypolicy(request):
+    return render(request, 'privacy_policy.html')
