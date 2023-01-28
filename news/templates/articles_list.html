@@ -8,7 +8,7 @@
 <div class="magazine-layout">
 
 	<div class="magazine-column"> <!-- https://www.coindesk.com/arc/outboundfeeds/rss/ --> 
-	{% for row in rows1|slice:":3"  %}
+	{% for row in rows1|slice:":4"  %}
 
 		{% for entry in row  %}
 
@@ -20,13 +20,16 @@
 			
 			<div class="article-excerpt">
 				<p>{{ entry.description|safe|truncatewords:30 }} </p>
-				<a href="{{entry.url}}" target="_blank">More</a>
 			</div>
+			<a href="{{entry.url}}" target="_blank" class="read-more-link">Read More</a>
+
 			<div class="article-author">
 				<div class="article-author-info">
 					<dl>
 						<dt>{{ entry.author }}</dt>
+						<p class="publication_date">{{ entry.publication_date}}</p>
 					</dl>
+					
 				</div>
 			</div>
 			{% endfor %}
@@ -48,12 +51,14 @@
 			</h2>
 			<div class="article-excerpt">
 				<p>{{ entry.description|safe|truncatewords:40 }} </p>
-				<a href="{{entry.url}}" target="_blank">More</a>
 			</div>
+			<a href="{{entry.url}}" target="_blank" class="read-more-link">Read More</a>
+
 			<div class="article-author">
 				<div class="article-author-info">
 					<dl>
 						<dt>{{ entry.author }}</dt>
+						<p class="publication_date">{{ entry.publication_date}}</p>
 					</dl>
 				</div>
 			</div>
@@ -74,12 +79,11 @@
 				<img src="{{ entry.media }}" />
 			</figure>
 			<h2 class="article-title article-title--small">
-				
-				
-				<a href="#" class="article-link">{{ entry.title }}</mark></a>
+			<a href="{{entry.url}}" class="article-link" target="_blank">{{ entry.title }}</a>
 			</h2>
 			<div class="article-creditation">
-				<p>{{ entry.author }}</p>
+				<p>- {{ entry.author }}</p>
+				<p class="publication_date">{{ entry.publication_date}}</p>
 			</div>
 		{% endfor %}
 
@@ -99,14 +103,16 @@
 			</h2>
 			<div class="article-excerpt" id="right-article-images">
 				{{ entry.description|safe|truncatewords:40 }}
-				
 				<!-- <p>Slack has become indispensible for many businesses operation remotely during the pandemic. Here's what the acquisition could mean for users...</p> -->
 			</div>
+			<a href="{{entry.url}}" target="_blank" class="read-more-link">Read More</a>
+
 			<div class="article-author">
 		
 				<div class="article-author-info">
 					<dl>
 						<dt>By: {{ entry.author }}</dt>
+						<p class="publication_date">{{ entry.publication_date}}</p>
 					</dl>
 				</div>
 			</div>
