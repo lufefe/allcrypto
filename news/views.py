@@ -25,7 +25,7 @@ def articles_list(request): #todo update feeds and numbers in objects.filter sta
 
     # Source 5 - Podcast
     
-    return render(request, 'articles_list.html', {'rows1': rows1, 'rows2': rows2, 'rows3': rows3, 'rows4': rows4, 'rows5': rows5})
+    return render(request, 'articles_list.html', {'rows1': rows1, 'rows2': rows2, 'rows3': rows3, 'rows4': rows4})
 
 def feeds_list(request):
     feeds = Feed.objects.all()
