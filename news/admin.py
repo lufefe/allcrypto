@@ -17,11 +17,12 @@ class FeedForm(forms.ModelForm):
         model = Feed
         fields = '__all__'
     
-    #def clean(self):
-    #    feed = Feed
-     #   feedExists = Feed.objects.filter(url = feed.url)
-      #  if len(feedExists) == 0:
-       #     raise ValidationError('Feed already exists!')
+    def clean(self):
+        feed = Feed
+        feedExists = Feed.objects.filter(url = feed.url)
+        print(feedExists)
+        if feedExists:
+            raise ValidationError('Feed already exists!')
 
 
 class FeedAdmin(admin.ModelAdmin):
