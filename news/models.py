@@ -14,7 +14,7 @@ class Article(models.Model):
     feed = models.ForeignKey(Feed, on_delete=models.CASCADE)
     title = models.CharField(max_length=500)
     url = models.URLField()
-    media = models.URLField(default=None)
+    media = models.URLField(default=None, max_length=500)
     description = models.TextField()
     publication_date = models.DateTimeField()
     author = models.CharField(max_length=500)
