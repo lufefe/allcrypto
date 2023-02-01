@@ -1,6 +1,6 @@
 from dataclasses import fields
 import datetime
-from email import feedparser
+import feedparser
 from django import forms
 from django.contrib import admin
 from django.forms import ValidationError
