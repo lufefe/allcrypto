@@ -1,6 +1,6 @@
 from dataclasses import fields
 import datetime
-from email import feedparser
+import feedparser
 from django import forms
 from django.contrib import admin
 from django.forms import ValidationError
@@ -20,7 +20,8 @@ class FeedForm(forms.ModelForm):
     def clean(self):
         feed = Feed
         feedExists = Feed.objects.filter(url = feed.url)
-        if len(feedExists) == 0:
+        print(feedExists)
+        if feedExists:
             raise ValidationError('Feed already exists!')
 
 
