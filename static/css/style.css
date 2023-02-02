@@ -481,7 +481,7 @@ input[type="checkbox"]{
   color: #000;
 }
 .article-title--large {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 .article-title--large + * {
   margin-top: 1.5rem;
