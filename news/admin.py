@@ -18,9 +18,8 @@ class FeedForm(forms.ModelForm):
         fields = '__all__'
     
     def clean(self):
-        feed = Feed
-        feedExists = Feed.objects.filter(url = feed.url)
-        print(feedExists)
+        feed = self.cleaned_data['url']
+        feedExists = Feed.objects.filter(url = feed).exists()
         if feedExists:
             raise ValidationError('Feed already exists!')
 
