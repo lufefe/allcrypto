@@ -8,7 +8,7 @@ class BackgroundClass:
     @staticmethod
     def update_db():
         # refresh server here
-
+        print("Updating ...")
         # Do your update db from RSS task here
         all_feeds = Feed.objects.all()
         rss = []
