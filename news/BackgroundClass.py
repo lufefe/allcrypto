@@ -28,7 +28,6 @@ class BackgroundClass:
                 for entry in rss:
                     for artitle in entry.entries:
                         get_feed_id = Feed.objects.get(url = artitle.title_detail.base)
-                        print("get_feed_id:", get_feed_id)
         
                         article = Article()
                         article.title = artitle.title
@@ -46,6 +45,7 @@ class BackgroundClass:
                         article.publication_date = date
                         article.feed = get_feed_id
                         article.save()
+                        print("Articles updated -", date)
 
 
     # def test(request):
