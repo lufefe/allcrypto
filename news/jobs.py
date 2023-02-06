@@ -4,5 +4,5 @@ from .BackgroundClass import BackgroundClass
 
 def start():
     scheduler = BackgroundScheduler()
-    scheduler.add_job(BackgroundClass.update_db, 'interval', hours=1)
+    scheduler.add_job(BackgroundClass.update_db, 'interval', minutes=5)
     scheduler.start()
