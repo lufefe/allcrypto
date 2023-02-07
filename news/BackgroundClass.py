@@ -11,6 +11,7 @@ class BackgroundClass:
         print("Updating ...")
         # Do your update db from RSS task here
         all_feeds = Feed.objects.all()
+        print("feeds", all_feeds)
         rss = []
         for feed in all_feeds:
             rss.append(feedparser.parse(feed.url))
