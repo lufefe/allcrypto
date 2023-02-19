@@ -11,6 +11,7 @@ class BackgroundClass:
         print("Updating ...")
         # Do your update db from RSS task here
         all_feeds = Feed.objects.all()
+        # print("af", all_feeds)
         rss = []
         for feed in all_feeds:
             rss.append(feedparser.parse(feed.url))
@@ -22,9 +23,13 @@ class BackgroundClass:
                 for art in Article.objects.all():
                     if ent.title == art.title:
                         already_updated = True
-                    else:
-                        get_feed_id = Feed.objects.get(url = art.title.title_detail.base)
-
+                        
+            # print(already_updated)
+            if not already_updated:
+                for entry in rss:
+                    for artitle in entry.entries:
+                        get_feed_id = Feed.objects.get(url = artitle.title_detail.base)
+                        print(get_feed_id)
                         article = Article()
                         article.title = artitle.title
                         article.url = artitle.link
@@ -33,7 +38,7 @@ class BackgroundClass:
                             article.media = artitle.media_content[0]['url']
                         except:
                             article.media = ''
-
+                
                         article.author = artitle.author
                         # published date formatting
                         d = datetime.datetime(*(artitle.published_parsed[0:6]))
@@ -42,8 +47,8 @@ class BackgroundClass:
                         article.feed = get_feed_id
                         article.save()
                         print("Articles updated -", date)
-                        
-    
+            else:
+                print("No updates made.")
 
     # def test(request):
     #     articles = Article.objects.all()
