@@ -23,7 +23,7 @@ class BackgroundClass:
                     if ent.title == art.title:
                         already_updated = True
                     else:
-                        get_feed_id = Feed.objects.get(url = article.title_detail.base)
+                        get_feed_id = Feed.objects.get(url = art.title.title_detail.base)
 
                         article = Article()
                         article.title = artitle.title
