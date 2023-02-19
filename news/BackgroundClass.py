@@ -4,27 +4,6 @@ import feedparser
 from django.shortcuts import render
 
 class BackgroundClass:
-    
-    @staticmethod
-    def update_db():
-        # refresh server here
-        print("Updating ...")
-        # Do your update db from RSS task here
-        all_feeds = Feed.objects.all()
-        rss = []
-        for feed in all_feeds:
-            rss.append(feedparser.parse(feed.url))
-
-        already_updated = False
-        for r in rss:
-            for ent in r.entries:
-                # print(ent.title, ent.published)
-                for art in Article.objects.all():
-                    if ent.title == art.title:
-                        already_updated = True
-                    else:
-                        save_to_db(already_updated)
-                        
     def save_to_db(already_updated):
         # print(already_updated)
         if not already_updated:
@@ -51,6 +30,28 @@ class BackgroundClass:
                     print("Articles updated -", date)
         else:
             print("Not updated")
+    
+    @staticmethod
+    def update_db():
+        # refresh server here
+        print("Updating ...")
+        # Do your update db from RSS task here
+        all_feeds = Feed.objects.all()
+        rss = []
+        for feed in all_feeds:
+            rss.append(feedparser.parse(feed.url))
+
+        already_updated = False
+        for r in rss:
+            for ent in r.entries:
+                # print(ent.title, ent.published)
+                for art in Article.objects.all():
+                    if ent.title == art.title:
+                        already_updated = True
+                    else:
+                        save_to_db(already_updated)
+                        
+    
 
     # def test(request):
     #     articles = Article.objects.all()
