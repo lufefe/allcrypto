@@ -8,10 +8,9 @@ class BackgroundClass:
     @staticmethod
     def update_db():
         # refresh server here
-        print("Updating ...")
+
         # Do your update db from RSS task here
         all_feeds = Feed.objects.all()
-        # print("af", all_feeds)
         rss = []
         for feed in all_feeds:
             rss.append(feedparser.parse(feed.url))
@@ -29,7 +28,7 @@ class BackgroundClass:
                 for entry in rss:
                     for artitle in entry.entries:
                         get_feed_id = Feed.objects.get(url = artitle.title_detail.base)
-                        print(get_feed_id)
+        
                         article = Article()
                         article.title = artitle.title
                         article.url = artitle.link
@@ -47,8 +46,7 @@ class BackgroundClass:
                         article.feed = get_feed_id
                         article.save()
                         print("Articles updated -", date)
-            else:
-                print("No updates made.")
+
 
     # def test(request):
     #     articles = Article.objects.all()

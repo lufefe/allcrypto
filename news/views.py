@@ -22,6 +22,8 @@ def articles_list(request): #todo update feeds and numbers in objects.filter sta
     # Source 4 - https://coinstats.app/blog/feed/
     articles4 = Article.objects.filter(feed = 24).order_by('-publication_date')
     rows4 = [articles4[x:x+1] for x in range(0, len(articles4), 1)]
+
+    # Source 5 - Podcast
     
     return render(request, 'articles_list.html', {'rows1': rows1, 'rows2': rows2, 'rows3': rows3, 'rows4': rows4})
 
