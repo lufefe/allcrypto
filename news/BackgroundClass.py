@@ -22,31 +22,35 @@ class BackgroundClass:
                 for art in Article.objects.all():
                     if ent.title == art.title:
                         already_updated = True
+                    else:
+                        save_to_db(already_updated)
                         
-            # print(already_updated)
-            if not already_updated:
-                for entry in rss:
-                    for artitle in entry.entries:
-                        get_feed_id = Feed.objects.get(url = artitle.title_detail.base)
-        
-                        article = Article()
-                        article.title = artitle.title
-                        article.url = artitle.link
-                        article.description = artitle.description
-                        try:
-                            article.media = artitle.media_content[0]['url']
-                        except:
-                            article.media = ''
-                
-                        article.author = artitle.author
-                        # published date formatting
-                        d = datetime.datetime(*(artitle.published_parsed[0:6]))
-                        date = d.strftime('%Y-%m-%d %H:%M:%S')
-                        article.publication_date = date
-                        article.feed = get_feed_id
-                        article.save()
-                        print("Articles updated -", date)
+    def save_to_db(already_updated):
+        # print(already_updated)
+        if not already_updated:
+            for entry in rss:
+                for artitle in entry.entries:
+                    get_feed_id = Feed.objects.get(url = artitle.title_detail.base)
 
+                    article = Article()
+                    article.title = artitle.title
+                    article.url = artitle.link
+                    article.description = artitle.description
+                    try:
+                        article.media = artitle.media_content[0]['url']
+                    except:
+                        article.media = ''
+
+                    article.author = artitle.author
+                    # published date formatting
+                    d = datetime.datetime(*(artitle.published_parsed[0:6]))
+                    date = d.strftime('%Y-%m-%d %H:%M:%S')
+                    article.publication_date = date
+                    article.feed = get_feed_id
+                    article.save()
+                    print("Articles updated -", date)
+        else:
+            print("Not updated")
 
     # def test(request):
     #     articles = Article.objects.all()
